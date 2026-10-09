@@ -1,0 +1,16 @@
+Question 5 — Advantages and Disadvantages
+Array (from Question 1)
+Advantages:
+Any book/index could be accessed instantly just by its position, since the array kept everything in one continuous block. It was simple to loop through and display every element in order.
+Disadvantages:
+The size had to be fixed upfront (MAX_SIZE), so it could run out of room. Inserting or deleting in the middle meant shifting every element after it, which got slower as the array filled up.
+Stack (from Question 2)
+Advantages:
+Push and pop were both instant, since they only ever touched the top — no shifting needed at all. It naturally matched the "last plate placed is the first plate removed" behavior, so the logic was very close to how the real pile actually works.
+Disadvantages:
+Only the top plate was ever reachable — there was no way to check or grab a plate in the middle without popping everything above it first. If the stack filled up (top reached MAX_SIZE - 1), no more plates could be pushed until something was popped.
+Queue (from Question 3)
+Advantages:
+Tokens were served in the exact order they arrived, which matched how a real bank counter should behave. Using a circular array meant slots freed up by dequeue could be reused, so the queue didn't "waste" space over time like a plain array would.
+Disadvantages:
+Tracking front and rear with wraparound (% MAX_SIZE) added extra logic compared to a simple array — it was easy to get the indices wrong. Like the others, capacity was still fixed, so the queue could become full even though, physically, there's no real limit on a bank line.
